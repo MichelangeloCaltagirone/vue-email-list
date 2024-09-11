@@ -5,23 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <title>Vue-Email-List-API-Ajax</title>
+    <!-- Vue js -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
+    
     
     <div id="emailNodeList">
 
         <p>Ecco 10 esempi di Email</p>
-        
-        <ul>
+
+        <ul v-for="email in mails">
             <li>{{email}}</li>
         </ul>
 
     </div>
     
-    <!-- Vue js -->
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <!-- Axios -->
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    
+    
     <!-- My script -->
     <script src="js/script.js"></script>
 </body>

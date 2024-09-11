@@ -3,24 +3,24 @@ const {createApp} = Vue;
 
 createApp({
 
-    data: () => {
+    data() {
         return {
             apiUrl: "https://flynn.boolean.careers/exercises/api/random/mail",
-            email: ''
+            mails:[]
         }
     },
 
     methods: {
-        getRandomEmail(){
-            axios.get(this.apiUrl).then(function(response) {
-            console.log(response.data.response),
-            this.email = response.data.response
+        getRandomEmail(num){
+            for(let i = 0; i < num; i++)
+            axios.get(this.apiUrl).then(response => {
+            this.mails.push(response.data.response)
             })
         }
     },
     mounted(){
-        this.getRandomEmail();
-        console.log(this.email, "è l'email in dataVue")
+        this.getRandomEmail(10)
+      
     }
 }).mount('#emailNodeList')
 
